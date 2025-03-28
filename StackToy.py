@@ -1,3 +1,5 @@
+pip install colorama
+
 from colorama import Fore, Style
 
 

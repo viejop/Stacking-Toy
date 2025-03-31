@@ -1,5 +1,3 @@
-pip install colorama
-
 from colorama import Fore, Style
 
 
@@ -10,6 +8,39 @@ colors = {
     'yellow':Fore.YELLOW,
     'green':Fore.GREEN,
     'blue':Fore.BLUE
+}
+
+ascii_art = {
+    'red': r"""
+ _____________________
+|                     |
+|         red         |
+|_____________________|
+    """,
+    'orange': r"""
+ _________________
+|                 |
+|     orange      |
+|_________________|
+    """,
+    'yellow': r"""
+ _______________
+|               |
+|     yellow    |
+|_______________|
+    """,
+    'green': r"""
+ ____________
+|            |
+|   green    |
+|____________|
+    """,
+    'blue': r"""
+ __________
+|          |
+|   blue   |
+|__________|
+    """
 }
 
 #creates a stack list
@@ -32,6 +63,7 @@ def add_ring(ring_color):
     if ring_color in colors:
         stack.append(ring_color)
         print(f"Added a {ring_color} ring to the stack.")
+        print(ascii_art[ring_color])  #displays the ascii art for the chosen ring
     else:
         print("Invalid color, please choose from red, orange, yellow, green, or blue.")
     print_stack()

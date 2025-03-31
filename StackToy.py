@@ -53,8 +53,8 @@ def print_stack():
         print("The stack is empty")
     else:
         counter = 1
-        for ring in reverse(stack):
-            print(f"{colors[ring]}Ring {counter}: {ring.capitalize()} {style.RESET_ALL}")
+        for ring in reversed(stack):
+            print(f"{colors[ring]}Ring {counter}: {ring.capitalize()} {Style.RESET_ALL}")
             counter += 1
     print("\n")
     

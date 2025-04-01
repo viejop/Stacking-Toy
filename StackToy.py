@@ -9,61 +9,60 @@ colors = {
     'green':Fore.GREEN,
     'blue':Fore.BLUE
 }
-
+#creates ascii art
 ascii_art = {
-    'red': r"""
+    'red': """
  _____________________
 |                     |
 |         red         |
 |_____________________|
     """,
-    'orange': r"""
+    'orange': """
  _________________
 |                 |
 |     orange      |
 |_________________|
     """,
-    'yellow': r"""
- _______________
-|               |
-|     yellow    |
-|_______________|
+    'yellow': """
+  _______________
+ |               |
+ |     yellow    |
+ |_______________|
     """,
-    'green': r"""
- ____________
-|            |
-|   green    |
-|____________|
+    'green': """
+   ____________
+  |            |
+  |   green    |
+  |____________|
     """,
-    'blue': r"""
- __________
-|          |
-|   blue   |
-|__________|
+    'blue': """
+    __________
+   |          |
+   |   blue   |
+   |__________|
     """
 }
 
 #creates a stack list
 stack = []
-
+#function to print stack
 def print_stack():
     """Print the stack of rings with color"""
     print("\nCurrent stack:")
     if not stack:
         print("The stack is empty")
     else:
-        counter = 1
         for ring in reversed(stack):
-            print(f"{colors[ring]}Ring {counter}: {ring.capitalize()} {Style.RESET_ALL}")
-            counter += 1
+            print(f"{colors[ring]}{ascii_art[ring]}{Style.RESET_ALL}")
     print("\n")
-    
+#function to add rings
 def add_ring(ring_color):
     """Add a colored ring"""
     if ring_color in colors:
         stack.append(ring_color)
         print(f"Added a {ring_color} ring to the stack.")
-        print(ascii_art[ring_color])  #displays the ascii art for the chosen ring
+        print(f"{colors[ring_color]}{ascii_art[ring_color]}{Style.RESET_ALL}")  #displays the ascii art for the chosen ring
+        
     else:
         print("Invalid color, please choose from red, orange, yellow, green, or blue.")
     print_stack()

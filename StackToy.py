@@ -96,5 +96,4 @@ def bigbucks():
         else:
             print("Invalid option. Please choose again.")
             
-if __name__ == "__bigbucks__":
-    bigbucks()
+bigbucks()
